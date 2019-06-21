@@ -1,0 +1,36 @@
+package com.file.projet.vitrine.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.file.projet.vitrine.modele.Effectif;
+import com.file.projet.vitrine.repository.EffectifRepository;
+
+
+
+@Service
+public class EffectifService {
+	
+	@Autowired
+	private EffectifRepository repo;
+	
+	public List<Effectif> findAll(){
+		return repo.findAll();
+	}
+
+	public void saveEffectif(Effectif effectif) {
+		repo.save(effectif);
+	}
+	
+	public Effectif get(Long id) {
+		return repo.findById(id).get();
+		
+	}
+	
+	public void delete(Long id) {
+		repo.deleteById(id);
+	}
+
+}

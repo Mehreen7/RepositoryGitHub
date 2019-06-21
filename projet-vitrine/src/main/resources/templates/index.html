@@ -7,6 +7,209 @@
 <body>
 
 	<div align="center">
+	
+	<h1>Affichage des Adresses</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Adresse ID</th>
+					<th>Nom</th>
+					<th> Option </th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="adresse:${listAdresses}">
+					<td th:utext="${adresse.adrId}">Adresse ID</td>
+					<td th:utext="${adresse.adrNom}">Nom</td>
+					<td><a href="DonneesForm.jsp" >Option</a></td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		
+		<h1>Affichage des Avis</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Avis ID</th>
+					
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="avis:${listAvis}">
+					<td th:utext="${avis.avisId}">Produit ID</td>
+				
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		<h1>Affichage des Categories</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Categorie ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="categorie:${listcategories}">
+					<td th:utext="${categorie.catId}">Categorie ID</td>
+					<td th:utext="${categorie.catNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		<h1>Affichage des Clients</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Client ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="client:${listClients}">
+					<td th:utext="${client.cltId}">Client ID</td>
+					<td th:utext="${client.cltNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		<h1>Affichage des DroitAcces</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Droit ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="droitAcces:${listDroits}">
+					<td th:utext="${droitAcces.drtId}">Droit ID</td>
+					<td th:utext="${droitAcces.drtNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		
+		<h1>Affichage des Effectifs</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Effectif ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="effectif:${listEffectifs}">
+					<td th:utext="${effectif.effId}">Effectif ID</td>
+					<td th:utext="${effectif.effNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		<h1>Affichage des Evenements</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Evenement ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="evenement:${listevnts}">
+					<td th:utext="${evenement.evtId}">Evenement ID</td>
+					<td th:utext="${evenement.evtNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		
+		<h1>Affichage des Favoris</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Favoris ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="favoris:${listFavoris}">
+					<td th:utext="${favoris.favId}">Favoris ID</td>
+					<td th:utext="${favoris.favNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		<h1>Affichage des Genres</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Genre ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="genre:${listGenres}">
+					<td th:utext="${genre.gnrId}">Genre ID</td>
+					<td th:utext="${genre.gnrNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+	
 		<h1>Affichage des produits</h1>
 
 		<table border="1">
@@ -14,22 +217,86 @@
 				<tr>
 					<th>Produit ID</th>
 					<th>Nom</th>
-					<th>Prix</th>
-					<th>Description</th>
-					<th>Action</th>
+					
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="Produit:${listProduits}">
-					<td th:text="${Produit.proId}">Produit ID</td>
-					<td th:text="${Produit.proNom}">Nom</td>
-					<td th:text="${Produit.proPrix}">Prix</td>
-					<td th:text="${Produit.proDesc}">Description</td>
-					<td>
-					</td>
+				<tr th:each="produit:${listProduits}">
+					<td th:utext="${produit.proId}">Produit ID</td>
+					<td th:utext="${produit.proNom}">Nom</td>
+					
 				</tr>
 			</tbody>
 		</table>
+
+
+
+
+
+<h1>Affichage des Societes</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Societe ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="societe:${listSocietes}">
+					<td th:utext="${societe.socId}">Societe ID</td>
+					<td th:utext="${societe.socNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		<h1>Affichage des TypeEv</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Type Evenement ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="typeEvenement:${listTypeEv}">
+					<td th:utext="${typeEvenement.typEvtId}">Type Evenement ID</td>
+					<td th:utext="${typeEvenement.typEvtNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+		
+		
+		
+		
+		<h1>Affichage des TypeP</h1>
+
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Type Produit ID</th>
+					<th>Nom</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="typeProduit:${listTypePr}">
+					<td th:utext="${typeProduit.typProId}">Type Produit ID</td>
+					<td th:utext="${typeProduit.typProNom}">Nom</td>
+					
+				</tr>
+			</tbody>
+		</table>
+
+
 
 
 	</div>

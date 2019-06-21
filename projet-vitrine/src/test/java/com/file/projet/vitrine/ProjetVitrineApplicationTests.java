@@ -11,6 +11,7 @@ public class ProjetVitrineApplicationTests {
 
 	@Test
 	public void contextLoads() {
+	
 	}
 
 }
