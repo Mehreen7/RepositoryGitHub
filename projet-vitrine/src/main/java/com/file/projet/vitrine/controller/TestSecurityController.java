@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestSecurityController {
 	
+	
+	
 	@RequestMapping("/")
 	public String Hello() {
 		return "Hello les mimis";

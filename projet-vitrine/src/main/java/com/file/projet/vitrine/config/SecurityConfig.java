@@ -1,4 +1,5 @@
 package com.file.projet.vitrine.config;
+
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -25,21 +26,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.withDefaultSchema()
 		.dataSource(dataSource)
 		.passwordEncoder(new BCryptPasswordEncoder());
-	
-		
 	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		
-		
 	http
-	.authorizeRequests()
-	.antMatchers("/protectedByUserRole*").hasRole("PARTIEL")
-	.antMatchers("/protectedByAdminRole*").hasRole("TOTAL")
-	.antMatchers("/","notprotected").permitAll()
-	.and()
-	.httpBasic();
+	.authorizeRequests().antMatchers("/").hasAuthority("Total");
 	}
 
 }

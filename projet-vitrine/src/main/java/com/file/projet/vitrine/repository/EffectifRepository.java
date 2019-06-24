@@ -7,5 +7,4 @@ import com.file.projet.vitrine.modele.Effectif;
 public interface EffectifRepository extends JpaRepository<Effectif, Long>{
 
 	public Effectif findByUserName(String effMail);
-	
 }
