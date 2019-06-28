@@ -18,30 +18,29 @@ import javax.persistence.Table;
 public class Produit {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long proId;
-    private String proNom;
-    private String proPhoto;
-    private String proDesc;
-    private float proPrix;
-    private String proEtat;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Categorie categorie;
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private TypeProduit typeProduit;
-    @ManyToMany(mappedBy = "produits")
-    private Collection<Genre> genres;
-    @OneToMany(mappedBy = "produit")
-    private Collection<Avis> avis;
-    @ManyToMany(mappedBy = "produits")
-    private Collection<Favoris> favoris;
-	
-    public Produit() {
-    	genres = new ArrayList<>();
-        avis = new ArrayList<>();
-        favoris = new ArrayList<>();
+	private String proNom;
+	private String proPhoto;
+	private String proDesc;
+	private float proPrix;
+	private String proEtat;
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	private Categorie categorie;
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+	private TypeProduit typeProduit;
+	@ManyToMany(mappedBy = "produits")
+	private Collection<Genre> genres;
+	@OneToMany(mappedBy = "produit")
+	private Collection<Avis> avis;
+	@ManyToMany(mappedBy = "produits")
+	private Collection<Favoris> favoris;
+
+	public Produit() {
+		genres = new ArrayList<>();
+		avis = new ArrayList<>();
+		favoris = new ArrayList<>();
 	}
-    
 
 	public Produit(String proNom, String proDesc) {
 		super();
@@ -49,11 +48,9 @@ public class Produit {
 		this.proDesc = proDesc;
 	}
 
-
-
 	public Produit(String proNom, String proPhoto, String proDesc, float proPrix, String proEtat, Categorie categorie,
 			TypeProduit typeProduit, Collection<Genre> genres, Collection<Avis> avis, Collection<Favoris> favoris) {
-	
+
 		this.proNom = proNom;
 		this.proPhoto = proPhoto;
 		this.proDesc = proDesc;
@@ -160,7 +157,5 @@ public class Produit {
 				+ ", proPrix=" + proPrix + ", proEtat=" + proEtat + ", categorie=" + categorie + ", typeProduit="
 				+ typeProduit + ", genres=" + genres + ", avis=" + avis + ", favoris=" + favoris + "]";
 	}
-    
-    
 
 }

@@ -12,27 +12,19 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
-	
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserDetailsService userDetailsService;
-	
 	@Autowired
 	private DataSource dataSource;
+
 	@Autowired
-	public void configureGlobal (AuthenticationManagerBuilder authenticationMgr) throws Exception{
-		authenticationMgr
-		.jdbcAuthentication()
-		.withDefaultSchema()
-		.dataSource(dataSource)
-		.passwordEncoder(new BCryptPasswordEncoder());
-	}
-	
-	@Override
-	protected void configure(HttpSecurity http) throws Exception{
-		
-	http
-	.authorizeRequests().antMatchers("/").hasAuthority("Total");
+	public void configureGlobal(AuthenticationManagerBuilder authenticationMgr) throws Exception {
+
 	}
 
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
+
+	}
 }

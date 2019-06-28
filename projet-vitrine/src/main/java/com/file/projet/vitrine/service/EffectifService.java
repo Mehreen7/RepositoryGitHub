@@ -17,12 +17,10 @@ public class EffectifService implements UserDetailsService{
 	
 	@Autowired
 	private EffectifRepository repo;
-	private List<GrantedAuthority> list;
-	
+	private List<GrantedAuthority> list;	
 	public List<Effectif> findAll(){
 		return repo.findAll();
 	}
-
 	public void saveEffectif(Effectif effectif) {
 		repo.save(effectif);
 	}
@@ -33,14 +31,14 @@ public class EffectifService implements UserDetailsService{
 	
 	public void delete(Long id) {
 		repo.deleteById(id);
-	} 
-
-	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Effectif e = repo.findByUserName("username");
-		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(e.getDroitAcces().getDrtNom());
-		list.add(authority);
-		return new User(username, e.getEffMdp(), list);
 	}
 
+	@Override
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+		Effectif e = repo.findByEffEmail("effEmail");
+		userName = repo.findByEffEmail("effEmail").toString() ;
+		SimpleGrantedAuthority authority = new SimpleGrantedAuthority(e.getDroitAcces().getDrtNom());
+		list.add(authority);
+		return new User(userName, e.getEffMdp(), list);
+	}
 }

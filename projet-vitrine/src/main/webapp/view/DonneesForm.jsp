@@ -40,17 +40,10 @@
 			</tr>
 		</table>
         </form:form>
-
-
-	    
-</body-->
+	    </body-->
 </html>
-
 <!--div >
-
-<form:form modelAttribute="adresse" action="adresse" method="post
-       ">
-      <input type="submit" value="Ajouter"/>
-    </form:form>
+<form:form modelAttribute="adresse" action="adresse" method="post">
+   <input type="submit" value="Ajouter"/>
+   </form:form>
 </div-->
-

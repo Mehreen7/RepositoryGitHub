@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestSecurityController {
 	
 	
-	
+	/*
 	@RequestMapping("/")
 	public String Hello() {
 		return "Hello les mimis";
@@ -26,5 +26,5 @@ public class TestSecurityController {
 	@RequestMapping("/protectedByAdminRole")
 	public String HelloAdmin() {
 		return "Hello Admin Role";
-	}
+	}*/
 }
